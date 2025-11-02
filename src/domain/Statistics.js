@@ -1,4 +1,4 @@
-import { PRIZE } from "./WinCondition.js";
+import { PRIZE } from "../constants/LottoConstants.js";
 
 export default class Statistics {
   constructor() {
