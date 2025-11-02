@@ -21,6 +21,9 @@
 - [x] N장 로또 발행 (1~45, 중복 없는 6개)
 - [x] Random.pickUniqueNumbersInRange 사용
 
+**GameService.js**
+- [ ] 게임 진행 흐름 구현 (입력 → 발행 → 당첨 판정 → 통계)
+
 ### Util Layer
 **Validator.js**
 - [x] 구입 금액 1,000원 단위 검증
