@@ -1,6 +1,6 @@
 import { MATCH_COUNT } from "../constants/LottoConstants.js";
 
-export default class WinCondition {
+class WinCondition {
   constructor(winningNumbers, bonus) {
     this.winSet = new Set(winningNumbers);
     this.bonus = bonus;
@@ -18,3 +18,5 @@ export default class WinCondition {
     return null;
   }
 }
+
+export default WinCondition;
