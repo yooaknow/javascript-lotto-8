@@ -1,5 +1,5 @@
 import Statistics from "../src/domain/Statistics.js";
-import { PRIZE } from "../src/domain/WinCondition.js";
+import { PRIZE } from "../src/constants/LottoConstants.js";
 
 describe("Statistics 클래스", () => {
   let stats;
