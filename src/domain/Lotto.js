@@ -1,43 +1,33 @@
-import { Construction } from "lucide-react";
+import { LOTTO_NUMBERS_COUNT, NUMBER_RANGE, ERROR_MESSAGES } from "../constants/LottoConstants.js";
 
 class Lotto {
   #numbers;
 
   constructor(numbers) {
     this.#validate(numbers);
-    this.#numbers = [...numbers].sort((a,b)=> a-b);
+    this.#numbers = [...numbers].sort((a, b) => a - b);
   }
-  
+
   get numbers() {
     return this.#numbers;
   }
 
   #validate(numbers) {
-    if (numbers.length !== 6) {
-      throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");
+    if (numbers.length !== LOTTO_NUMBERS_COUNT) {
+      throw new Error(ERROR_MESSAGES.INVALID_LOTTO_COUNT);
     }
 
-  const set = new Set(numbers);
-  if (set.size !== 6){
-    throw new Error("[ERROR] 로또 번호는 중복될 수 없습니다.");
-  }
-
-
-    
-  numbers.forEach((num)=> {
-    if (!Number.isInteger(num) || num <1 || num > 45) {
-      throw new Error ("[ERROR] 로또 번호는 1부터 45 사이의 숫자입니다.")
+    const set = new Set(numbers);
+    if (set.size !== LOTTO_NUMBERS_COUNT) {
+      throw new Error(ERROR_MESSAGES.DUPLICATE_LOTTO_NUMBER);
     }
-  });
 
-  
-
-  
+    numbers.forEach((num) => {
+      if (!Number.isInteger(num) || num < NUMBER_RANGE.MIN || num > NUMBER_RANGE.MAX) {
+        throw new Error(ERROR_MESSAGES.INVALID_LOTTO_NUMBER);
+      }
+    });
   }
-
-
-
-  // TODO: 추가 기능 구현
 }
 
 export default Lotto;
