@@ -1,10 +1,4 @@
-export const PRIZE = {
-  FIRST: 2000000000,
-  SECOND: 30000000,
-  THIRD: 1500000,
-  FOURTH: 50000,
-  FIFTH: 5000,
-};
+import { MATCH_COUNT } from "../constants/LottoConstants.js";
 
 export default class WinCondition {
   constructor(winningNumbers, bonus) {
@@ -16,11 +10,11 @@ export default class WinCondition {
     const matchCount = lotto.numbers.filter((n) => this.winSet.has(n)).length;
     const hasBonus = lotto.numbers.includes(this.bonus);
 
-    if (matchCount === 6) return "FIRST";
-    if (matchCount === 5 && hasBonus) return "SECOND";
-    if (matchCount === 5) return "THIRD";
-    if (matchCount === 4) return "FOURTH";
-    if (matchCount === 3) return "FIFTH";
+    if (matchCount === MATCH_COUNT.FIRST) return "FIRST";
+    if (matchCount === MATCH_COUNT.SECOND && hasBonus) return "SECOND";
+    if (matchCount === MATCH_COUNT.THIRD) return "THIRD";
+    if (matchCount === MATCH_COUNT.FOURTH) return "FOURTH";
+    if (matchCount === MATCH_COUNT.FIFTH) return "FIFTH";
     return null;
   }
 }
