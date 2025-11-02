@@ -1,6 +1,6 @@
 import { PRIZE } from "../constants/LottoConstants.js";
 
-export default class Statistics {
+class Statistics {
   constructor() {
     this.counts = {
       FIRST: 0,
@@ -29,3 +29,5 @@ export default class Statistics {
     return Math.round(rate * 10) / 10;
   }
 }
+
+export default Statistics;
