@@ -2,6 +2,7 @@ import LottoGenerator from "./LottoGenerator.js";
 import Statistics from "../domain/Statistics.js";
 import WinCondition from "../domain/WinCondition.js";
 import Validator from "../util/Validator.js";
+import { LOTTO_PRICE } from "../constants/LottoConstants.js";
 
 export default class GameService {
   constructor() {
@@ -10,7 +11,7 @@ export default class GameService {
 
   generateLottos(purchaseAmount) {
     Validator.validatePurchaseAmount(purchaseAmount);
-    const count = purchaseAmount / 1000;
+    const count = purchaseAmount / LOTTO_PRICE;
     return Array.from({ length: count }, () => LottoGenerator.generate());
   }
 
