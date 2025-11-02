@@ -1,5 +1,5 @@
-import Lotto from "../src/Lotto";
-import LottoGenerator from "../src/LottoGenerator";
+import Lotto from "../src/domain/Lotto.js";
+import LottoGenerator from "../src/service/LottoGenerator.js";
 
 describe("LottoGenerator", () => {
   test("의존성 주입된 랜덤 함수로 로또를 생성한다.", () => {
