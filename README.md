@@ -1,5 +1,6 @@
 # javascript-lotto-precourse
-
+> 콘솔 기반 로또 발매 및 당첨 결과 계산 프로그램  
+> 사용자는 로또를 구입하고, 당첨 번호를 입력하여 결과와 수익률을 확인할 수 있습니다.
 
 ### 기능 명세서 
 
@@ -47,3 +48,33 @@
   - [x] `[ERROR] 보너스 번호가 당첨 번호와 중복될 수 없습니다.`
   - [x] 에러 메시지 출력 후 재입력 요청
 
+---
+
+### 파일 구조 
+```
+javascript-lotto-precourse
+├──README.md
+├──index.js
+└──src
+    ├──App.js
+    │
+    ├──constants
+    │   └──LottoConstants.js
+    │
+    ├──domain
+    │   ├──Lotto.js
+    │   ├──Statistics.js
+    │   └──WinCondition.js
+    │
+    ├──service
+    │   ├──GameService.js
+    │   └──LottoGenerator.js
+    │
+    ├──util
+    │   └──Validator.js
+    │
+    └──view
+        ├──InputView.js
+        └──OutputView.js
+
+```

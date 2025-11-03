@@ -24,8 +24,8 @@ describe("Statistics 클래스", () => {
   });
 
   test("수익률 계산", () => {
-    stats.add("FIRST");   // 2,000,000,000원
-    stats.add("FIFTH");   // 5,000원
+    stats.add("FIRST");   
+    stats.add("FIFTH");  
     expect(stats.yieldRate(8000)).toBeCloseTo((PRIZE.FIRST + PRIZE.FIFTH)/8000*100, 1);
   });
 

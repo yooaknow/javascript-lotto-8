@@ -9,7 +9,7 @@ describe("GameService 클래스", () => {
   });
 
   test("구입 금액에 따라 N장 로또 생성", () => {
-    const lottos = service.generateLottos(3000); // 3장
+    const lottos = service.generateLottos(3000); 
     expect(lottos).toHaveLength(3);
     lottos.forEach((lotto) => {
       expect(lotto).toBeInstanceOf(Lotto);
@@ -47,7 +47,7 @@ describe("GameService 클래스", () => {
     const total = stats.totalPrize();
     expect(total).toBe(2000000000 + 30000000);
 
-    const yieldRate = stats.yieldRate(2000); // 2장 * 1000원
+    const yieldRate = stats.yieldRate(2000); 
     expect(yieldRate).toBeCloseTo((2000000000 + 30000000) / 2000 * 100, 1);
   });
 });
