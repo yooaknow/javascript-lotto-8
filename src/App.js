@@ -1,24 +1,12 @@
-import InputView from "./view/InputView.js";
-import OutputView from "./view/OutputView.js";
-import GameService from "./service/GameService.js";
+import GameController from "./controller/GameController.js";
 
 export default class App {
   constructor() {
-    this.service = new GameService();
+    this.controller = new GameController();
   }
 
   async run() {
-    const purchaseAmount = await InputView.readPurchaseAmount();
-
-    const lottos = this.service.generateLottos(purchaseAmount);
-    OutputView.printLottos(lottos);
-
-    const winningNumbers = await InputView.readWinningNumbers();
-    const bonusNumber = await InputView.readBonusNumber(winningNumbers);
-
-    const statistics = this.service.tallyResults(lottos, winningNumbers, bonusNumber);
-
-    OutputView.printStatistics(statistics, purchaseAmount);
+    await this.controller.run();
   }
 }
 
