@@ -18,7 +18,7 @@ export default class GameController {
     const winningNumbers = await this.inputView.readWinningNumbers();
     const bonusNumber = await this.inputView.readBonusNumber(winningNumbers);
 
-    const statistics = this.service.tallyResults(lottos, winningNumbers, bonusNumber);
+    const statistics = this.service.calculateResults(lottos, winningNumbers, bonusNumber);
 
     this.outputView.printStatistics(statistics, purchaseAmount);
   }

@@ -25,7 +25,7 @@ describe("GameService 클래스", () => {
     const winningNumbers = [1, 2, 3, 4, 5, 6];
     const bonusNumber = 7;
 
-    const stats = service.tallyResults(lottos, winningNumbers, bonusNumber);
+    const stats = service.calculateResults(lottos, winningNumbers, bonusNumber);
 
     expect(stats.counts.FIRST).toBe(1);
     expect(stats.counts.FIFTH).toBe(0);
@@ -39,7 +39,7 @@ describe("GameService 클래스", () => {
     const winningNumbers = [1, 2, 3, 4, 5, 6];
     const bonusNumber = 7;
 
-    const stats = service.tallyResults(lottos, winningNumbers, bonusNumber);
+    const stats = service.calculateResults(lottos, winningNumbers, bonusNumber);
 
     expect(stats.counts.FIRST).toBe(1);
     expect(stats.counts.SECOND).toBe(1);

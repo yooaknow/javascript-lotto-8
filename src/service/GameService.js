@@ -15,7 +15,7 @@ export default class GameService {
     return Array.from({ length: count }, () => LottoGenerator.generate());
   }
 
-  tallyResults(lottos, winningNumbers, bonusNumber) {
+  calculateResults(lottos, winningNumbers, bonusNumber) {
     Validator.validateWinningNumbers(winningNumbers);
     Validator.validateBonusNumber(bonusNumber, winningNumbers);
 
