@@ -66,36 +66,39 @@
 ### 프로젝트 구조 설계 의도 
 
 이번 로또 미션에서는 처음으로 프로젝트의 레이아웃 구조를 직접 설계해 보았음.
-그동안은 주어진 폴더 안에서 코드를 작성하는 경우가 많았지만, 이번에는 “어떤 책임을 어디에 두는 게 맞을까?”를 처음부터 고민하면서 구조를 만들어 나갔음.
+그동안은 주어진 폴더 안에서 코드를 작성하는 경우가 많았지만, 이번에는 어떤 책임을 어디에 두는 게 맞을까?를 처음부터 고민하면서 구조를 만들어 나갔음.
 
-프로그램의 핵심 흐름은 “입력 → 검증 → 로또 생성 → 당첨 판정 → 통계 계산 → 출력”으로 이어지며, 각 단계마다 성격이 다른 책임을 갖고 있음. 이 과정을 체계적으로 관리하기 위해 계층형 아키텍처 방식을 적용함.
+프로그램의 핵심 흐름은 입력 → 검증 → 로또 생성 → 당첨 판정 → 통계 계산 → 출력으로 이어지며, 각 단계마다 성격이 다른 책임을 갖고 있음. 이 과정을 체계적으로 관리하기 위해 계층형 아키텍처 방식을 적용함.
 
 #### 파일 구조 
 ```
 javascript-lotto-precourse
-├──README.md
-├──index.js
-└──src
-    ├──App.js
+├── README.md
+├── index.js
+└── src
+    ├── App.js
     │
-    ├──constants
-    │   └──LottoConstants.js
+    ├── constants
+    │   └── LottoConstants.js
     │
-    ├──domain
-    │   ├──Lotto.js
-    │   ├──Statistics.js
-    │   └──WinCondition.js
+    ├── controller
+    │   └── LottoController.js
     │
-    ├──service
-    │   ├──GameService.js
-    │   └──LottoGenerator.js
+    ├── domain
+    │   ├── Lotto.js
+    │   ├── Statistics.js
+    │   └── WinCondition.js
     │
-    ├──util
-    │   └──Validator.js
+    ├── service
+    │   ├── GameService.js
+    │   └── LottoGenerator.js
     │
-    └──view
-        ├──InputView.js
-        └──OutputView.js
+    ├── util
+    │   └── Validator.js
+    │
+    └── view
+        ├── InputView.js
+        └── OutputView.js
 
 ```
 --- 
